@@ -27,7 +27,7 @@ public class Paymentpage extends Utility {
 	WebElement cvvno;
 
 	public void paydetails() {
-		//cardno.sendKeys(" 5468-3992-2953-4953");
+		cardno.sendKeys(" 5468-3992-2953-4953");
 		cardname.sendKeys(pro.getProperty("cardname"));
 		expmonth.sendKeys(pro.getProperty("expmonth"));
 		expyear.sendKeys(pro.getProperty("expyear"));

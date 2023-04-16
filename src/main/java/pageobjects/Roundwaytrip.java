@@ -1,9 +1,12 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.Utility;
 
@@ -23,16 +26,16 @@ public class Roundwaytrip extends Utility {
 	WebElement to;
 	@FindBy(xpath = "(//div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar'])[1]")
 	WebElement date;
-	@FindBy(xpath = "(//div[@class=\"css-1dbjc4n r-1awozwy r-1pi2tsx r-1777fci r-13qz1uu\"])[45]")
-	WebElement dobclick;
 
 	@FindBy(xpath = "//div[text()='Select Date']")
 	WebElement date2;
+	@FindBy(xpath = "(//div[@data-testid='undefined-calendar-day-29'])[1]")
+	WebElement dobclick;
 	@FindBy(xpath = "(//div[@class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep'])[5]")
 	WebElement passenger;
 	@FindBy(xpath = "(//div[@class='css-1dbjc4n r-1awozwy r-19m6qjp r-y47klf r-1loqt21 r-eu3ka r-1777fci r-1otgn73 r-eafdt9 r-1i6wzkk r-lrvibr r-1aockid'])[1]")
 	WebElement adult;
-	@FindBy(xpath = "//div[text()='Search Flight']")
+	@FindBy(css = "div[data-testid='home-page-flight-cta']")
 	WebElement search;
 	@FindBy(css = "div[data-testid=\"continue-search-page-cta\"]")
 	WebElement fight;
@@ -41,14 +44,27 @@ public class Roundwaytrip extends Utility {
 		roundbtn.click();
 		from.sendKeys("MAA");
 		to.sendKeys("BOM");
+		Thread.sleep(4000);
 		date.click();
 		date2.click();
-		date2.click();
-		passenger.click();
 		Thread.sleep(2000);
-		adult.click();
-		//search.click();
-//	fight.click();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		dobclick = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("(//div[@data-testid='undefined-calendar-day-29'])[1]")));
+		dobclick.click();
 
+		Thread.sleep(1000);
+		passenger.click();
+		//Thread.sleep(2000);
+		adult.click();
+		
+		search.click();
+	     fight.click();
+	}
+	
+
+	private WebDriverWait WebDriverWait(WebDriver driver2, int i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

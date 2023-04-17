@@ -12,7 +12,7 @@ public class Addontest extends Baseclass {
 		Addonpage add = new Addonpage(driver);
 		add.addon();
 		Thread.sleep(3000);
-		//add.addon().paydetails();
+	
 		
 		String title = driver.getTitle();
 		Assert.assertEquals(driver.getTitle(), title);

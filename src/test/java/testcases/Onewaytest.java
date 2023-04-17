@@ -30,7 +30,6 @@ public class Onewaytest extends Baseclass {
 		Passengerdetailstest.details2();
 		Thread.sleep(3000);
 		Addontest.addtest();
-		Thread.sleep(3000);
 		
 	
 		System.out.println("Booking conformed");

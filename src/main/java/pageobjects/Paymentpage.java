@@ -1,5 +1,6 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,8 +15,10 @@ public class Paymentpage extends Utility {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(xpath ="//iframe[@class='card_number_iframe']")
+	WebElement frame1;
 
-	@FindBy(xpath="//input[@name='card_number']")
+	@FindBy(xpath="//input[@id='card_number']")
 	WebElement cardno;
 	@FindBy(name = "name_on_card")
 	WebElement cardname;
@@ -26,8 +29,10 @@ public class Paymentpage extends Utility {
 	@FindBy(name = "security_code")
 	WebElement cvvno;
 
-	public void paydetails() {
+	public  void paydetails() {
+		driver.switchTo().frame(1);
 		cardno.sendKeys(" 5468-3992-2953-4953");
+		
 		cardname.sendKeys(pro.getProperty("cardname"));
 		expmonth.sendKeys(pro.getProperty("expmonth"));
 		expyear.sendKeys(pro.getProperty("expyear"));

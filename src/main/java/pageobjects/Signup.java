@@ -53,8 +53,7 @@ public class Signup extends Utility {
 		password.sendKeys(pro.getProperty("password"));
 
 		conformpassword.sendKeys(pro.getProperty("conformpassword"));
-		btn.click();
-		submitbtn.click();
+		
 
 	}
 

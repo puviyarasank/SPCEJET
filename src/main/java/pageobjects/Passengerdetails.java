@@ -1,5 +1,6 @@
 package pageobjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,7 +48,7 @@ public class Passengerdetails extends Utility {
 	
 
 	public void block1() throws InterruptedException {
-		//select(title, "Mr", "vis");
+	
 		firstname.sendKeys(pro.getProperty("firstname"));
 		Thread.sleep(1000);
 		lastname.sendKeys(pro.getProperty("lastname"));
@@ -68,20 +69,16 @@ public class Passengerdetails extends Utility {
 	public void passenger2() throws InterruptedException {
           Thread.sleep(3000);
 		
-		
 		passenger2.click();
-		//select(title2, "Mr", "vis");
-		
+	
 		firstname2.sendKeys("ezhilarasan");
 		lastname2.sendKeys("k");
 		mobilenum2.sendKeys(pro.getProperty("mobilenum"));
 		Thread.sleep(2000);
 		continueclick.click();
 		Thread.sleep(2000);
-//		action("click", "click", click);
-//		Thread.sleep(2000);
-//		action("doubleclick", "doubleclick", click);
 		
+//		
 	}
 
 }

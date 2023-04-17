@@ -62,6 +62,7 @@ public class Onewaytrip {
 	public void searchfight() {
 		searchfight.click();
 		fight.click();
+		
 
 	}
 
